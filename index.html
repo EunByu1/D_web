@@ -1,0 +1,420 @@
+<!-- GreenAI WebSite -->
+<!doctype html>
+    <html lang="ko">
+        <head>
+            <meta charset="utf-8">
+
+            <!-- title -->
+            <title>GreenAI Dashboard</title>
+
+            <!-- icon -->
+            <link rel="icon" href="Setting\icon\leaf.svg">
+
+            <!-- bootstrap -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+            <!-- chart.js -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <!-- style sheet -->
+            <link rel="stylesheet" href="Setting\css\index.css">
+
+            <!-- font style -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+        </head>
+
+
+
+        <body id="body">
+            <!-- 머리말 -->
+            <header id="header" class="py-3 container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 id="header-h1">Puri-Bot Control Dashboard</h1> 
+                    </div>
+    
+                    <div class="col-lg-6">
+                        <h3 id="header-h3">GreenAI <img src="Setting\\icon\\leaf-header.png"></h3>
+                    </div>
+                </div>
+            </header>
+
+
+
+            <!-- 본문 -->
+            <div id="main" class="container-fluid">
+                <div class="row">
+
+
+            <!-- Side Menu-->
+                    <nav id="side-menu" class="col-md-3 col-lg-2">
+                        <div class="position-static pt-1">
+                            <ul class="nav flex-column">
+                                <li id="side-menu-1" class="nav-item">
+                                    <a>
+                                        &nbsp;
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" style="margin-bottom:4px" class="bi bi-card-text" viewBox="0 0 16 16">
+                                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                        <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
+                                        &nbsp;Information
+                                    </a>
+                                </li>
+                                
+
+                                <li id="side-menu-2" class="nav-item">
+                                    <a>
+                                        &nbsp;&nbsp;
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-bottom:4px" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
+                                        Explanation
+                                    </a>
+                                </li>
+                                
+
+                                <li id="side-menu-3" class="nav-item">
+                                    <a>
+                                        &nbsp;
+                                        The above site is a web <br>&nbsp;
+                                        -based control dashboard <br>&nbsp;
+                                        for monitoring statistical <br>&nbsp;
+                                        values on a weekly basis <br>&nbsp;
+                                        based on environmental <br>&nbsp;
+                                        data collected by Artificial <br>&nbsp;
+                                        Intelligence autonomous <br>&nbsp;
+                                        driving purification robots.
+                                    </a>
+                                </li> 
+
+                                <li id="side-menu-4" class="nav-item">
+                                    <a>
+                                        &nbsp;&nbsp;
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-bottom:4px" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
+                                        Function
+                                    </a>
+                                </li>
+                                
+
+                                <li id="side-menu-5" class="nav-item">
+                                    <a>
+                                        &nbsp;
+                                        After obtaining the average <br>&nbsp;
+                                        value of &nbsp;*sensor data <br>&nbsp;
+                                        (temperature, humidity, <br>&nbsp;
+                                        and fine dust) collected by <br>&nbsp;
+                                        the "Puri-Bot", it is a web <br>&nbsp;
+                                        page in various widget <br>&nbsp;
+                                        forms, and environmental <br>&nbsp;
+                                        data for a week can be <br>&nbsp;
+                                        checked through a graph.
+                                    </a>
+                                </li>      
+                                
+                                <li id="side-menu-6" class="nav-item">
+                                    <a>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-reception-3" viewBox="0 0 16 16">
+                                        <path d="M0 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-5zm4-3a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-8zm4 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/></svg>
+                                        &nbsp;
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-git" viewBox="0 0 16 16">
+                                        <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.031 1.031 0 0 0 0-1.457"/></svg>
+                                        &nbsp;
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-h-square-fill" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm9 4.002V12H9.67V8.455H6.33V12H5V4.002h1.33v3.322h3.34V4.002H11Z"/></svg>
+                                    </a>
+                                </li>   
+                            </ul>          
+                        </div>
+                    </nav>
+                    
+                    
+            <!-- Main -->
+                    <article  class="col-md-10 col-lg-10">
+                        <div id="main-top" class="d-flex p-2">
+                            <h4 id="main-top-h4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" style="margin-bottom:4px"fill="currentColor" class="bi bi-filter-left" viewBox="0 0 16 16">
+                                <path d="M2 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/></svg>
+                                &nbsp;Dashboard
+                            </h4>
+                        </div>
+
+                        <hr class="my-2">
+
+                        <div clss="row">
+                            <div id="chart_1" class="col-lg-12">
+                                <canvas id="Synthesis" width="68" height="19"></canvas>
+                            </div>  
+                        </div>
+
+                        <hr class="my-2">
+
+                        <div class="row">
+                            <div id="chart_2-1" class="col-lg-3">
+                                <canvas id="Temp" width="40%" height="28%"></canvas>
+                            </div>
+
+                            <div id="chart_2-2" class="col-lg-3">
+                                <canvas id="Humidity" width="40%" height="28%"></canvas>
+                            </div>
+
+                            <div id="chart_2-3" class="col-lg-3">
+                                <canvas id="Fine-Dust" width="40%" height="28%"></canvas>
+                            </div>
+
+                            <div id="img-div" class="col-lg-1">
+                                <a id="img-a"> 
+                                    <img src="https://cdn.dribbble.com/users/634508/screenshots/2172083/media/863da86eeaed056444be4fc8b02edcdf.gif" style="padding: 0px; margin:0px"width="294" height="253">
+                                </a>
+                            </div>
+                        </div>
+
+                        <hr class="my-2">      
+                    </article>
+                </div>
+            </div>
+
+
+
+            <!-- 바닥글 -->
+            <footer id="footer">
+                <a>
+                    <h6 id="footer-h6">GREEN-AI | 22_HF317</h6>
+                </a>
+            </footer>
+
+
+
+            <!-- Sensor Data -->
+            <script src="index.js"></script>
+
+
+            <script>
+            // 1) Synthesis Chart     
+                new Chart(document.getElementById("Synthesis"), {
+                    data : {
+                        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                        datasets : [{
+                            type : "line",
+                            data: humidity_data(),
+                            label:"Humidity Statistics",
+                            backgroundColor: "#759DE6",
+                            borderColor: "#759DE6",
+                            borderWidth:1,
+                        },
+
+                        {
+                            type : "bar",
+                            data: temp_data(),
+                            label:"Temperature Statistics",
+                            backgroundColor: "rgba(71, 202, 132, 0.6)",
+                            borderColor: "#47CA84",
+                            borderWidth:1     
+                        },
+
+                        {
+                            type : "bar",
+                            data: metter_data(),
+                            label:"Fine-Dust Statistics",
+                            backgroundColor: "rgba(212, 141, 186, 0.6)",
+                            borderColor: "#BA5892",
+                            borderWidth:1  
+                        }]},
+
+                        options: {    
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                            color: "#C9C9C9"
+                                            }
+                                        }
+                                    },   
+                                scales: {
+                                        x: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        },
+                                        y: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        }
+                                    }
+                                }
+                    })
+            
+            // 2-1) Temp Chart     
+                new Chart(document.getElementById("Temp"), {
+                    type : "line",
+                    data : {
+                        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                        datasets : [{
+                            data: temp_data(),
+                            label:"Temperature Statistics",
+                            backgroundColor: "rgba(71, 202, 132, 0.2)",
+                            fill:"start",
+                            borderColor: "#41BA7A",
+                            pointBackgroundColor: "#41BA7A",
+                            borderWidth:1
+                
+                        }]},
+                        options: {    
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                            color: "#C9C9C9"
+                                            }
+                                        }
+                                    },   
+                                scales: {
+                                        x: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        },
+                                        y: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        }
+                                    }
+                                }
+                    })
+
+            // 2-2) Humidity Chart
+                new Chart(document.getElementById("Humidity"), {
+                        type : "bar",
+                        data : {
+                            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                            datasets : [{
+                                data: humidity_data(),
+                                label:"Temperature Statistics",
+                                backgroundColor: "rgba(117, 157, 230, 0.1)",
+                                borderColor: "#759DE6",
+                                borderWidth:1
+                            }]},
+
+                            options: {    
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                            color: "#C9C9C9"
+                                            }
+                                        }
+                                    },   
+                                scales: {
+                                        x: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        },
+                                        y: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        }
+                                    }
+                                }
+                            
+                        })
+
+            // 2-3) Fine-Dust     
+            new Chart(document.getElementById("Fine-Dust"), {
+                        type : "line",
+                        data : {
+                            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+                            datasets : [{
+                                data: metter_data(),
+                                label:"Temperature Statistics",
+                                backgroundColor: "rgba(212, 141, 186, 0.1)",
+                                fill:"start",
+                                borderColor: "#BA5892",
+                                pointBackgroundColor: "#BA5892",
+                                borderWidth:1
+                    
+                            }]},
+                            options: {    
+                                    plugins: {
+                                        legend: {
+                                            labels: {
+                                            color: "#C9C9C9"
+                                            }
+                                        }
+                                    },   
+                                scales: {
+                                        x: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        },
+                                        y: {
+                                            gridLines: {
+                                                color: "#C9C9C9",
+                                                display: false,
+                                            },
+
+                                            ticks: {
+                                                color: "#C9C9C9",
+                                            }
+                                        }
+                                    }
+                                }
+                })
+            </script>
+
+        </body>
+    </html>
