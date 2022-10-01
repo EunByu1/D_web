@@ -18,7 +18,7 @@ metter   = []
 # [3] 일주일 단위로 DashBoard에서 사용할 거임 -> (count < 7)
 while(count < 7):
     if (count == 0):
-        file = "H:\\My Drive\\dataset\\fake_data_{}.csv".format(day_2)
+        file = "H:\\My Drive\\GreenAI_dataset\\fake_data_{}.csv".format(day_2)
         df = pd.read_csv(file)
 
         print(day_2)
@@ -52,7 +52,7 @@ while(count < 7):
         day_c1 = day_c1 + datetime.timedelta(days=1)
         day_c2 = day_c1.strftime("%Y%m%d")
 
-        file = "H:\\My Drive\\dataset\\fake_data_{}.csv".format(day_c2)
+        file = "H:\\My Drive\\GreenAI_dataset\\fake_data_{}.csv".format(day_c2)
         df = pd.read_csv(file)
 
         print(day_c2)
