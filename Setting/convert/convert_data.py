@@ -18,7 +18,7 @@ metter   = []
 # [3] 일주일 단위로 DashBoard에서 사용할 거임 -> (count < 7)
 while(count < 7):
     if (count == 0):
-        file = "D_web\\fake_data_{}.csv".format(day_2)
+        file = "H:\\My Drive\\GreenAI_dataset\\fake_data_{}.csv".format(day_2)
         df = pd.read_csv(file)
 
         print(day_2)
@@ -91,14 +91,14 @@ metter = ','.join(map(str, metter))
 
 
 # [5] 파일 생성 후 결과 저장 
-f = open("D_web\\index.js", "w", encoding="utf-8")
+f = open("C:\\Users\\ewqds\\Documents\\GitHub\\D_web\\index.js", "w", encoding="utf-8")
 f.write("function temp_data() {" + "\n\t"+ "return " + "[" + temp + "]" + "\n" + "}" + "\n\n\n")
 f.close()
 
-f = open("D_web\\index.js", "a", encoding="utf-8")
+f = open("C:\\Users\\ewqds\\Documents\\GitHub\\D_web\\index.js", "a", encoding="utf-8")
 f.write("function humidity_data() {" + "\n\t"+ "return " + "[" + humidity + "]" + "\n" + "}" + "\n\n\n")
 f.close()
 
-f = open("D_web\\index.js", "a", encoding="utf-8")
+f = open("C:\\Users\\ewqds\\Documents\\GitHub\\D_web\\index.js", "a", encoding="utf-8")
 f.write("function metter_data() {" + "\n\t"+ "return " + "[" + metter + "]" + "\n" + "}" + "\n\n")
 f.close()
