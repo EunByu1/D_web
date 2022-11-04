@@ -102,5 +102,3 @@ f.close()
 f = open("C:\\Users\\ewqds\\Documents\\GitHub\\D_web\\index.js", "a", encoding="utf-8")
 f.write("function metter_data() {" + "\n\t"+ "return " + "[" + metter + "]" + "\n" + "}" + "\n\n")
 f.close()
-
-a
