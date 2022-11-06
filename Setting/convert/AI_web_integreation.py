@@ -15,25 +15,24 @@ def message():
 
     # 첫 주행 날짜
 
-    first_date         = datetime.datetime.strptime("20221101", "%Y%m%d")
+    first_date         = datetime.datetime.strptime("20221001", "%Y%m%d")
     first_date_str     = str(first_date)
     first_date_str     = first_date_str[:first_date_str.find(' ')].replace('-', '')
     print(first_date_str)
     print(first_date)
 
     # 현재 날짜
-    # now_date           = datetime.datetime.now()
-
+    now_date           = datetime.datetime.now()
     # # 받아올 데이터 일수
-    # read_time          = str(now_date - first_date)
-    # print(read_time)
-    # read_time          = int(read_time[:read_time.find(' ')])
-    # print(read_time)
+    read_time          = str(now_date - first_date)
+    print(read_time)
+    read_time          = int(read_time[:read_time.find(' ')])
+    print(read_time)
 
     dataset = []
 
     # 역대 환경 데이터를 모두 읽어옴
-    for i in range(28):		#(read_time)
+    for i in range(read_time):		#(read_time)
         read_file_name = str(first_date + datetime.timedelta(days = i))
         read_file_name = read_file_name[:read_file_name.find(' ')].replace('-', '')
         print(read_file_name)
@@ -129,9 +128,9 @@ def message():
     # design network
     model = Sequential()
     model.add(LSTM(25, input_shape=(train_X.shape[1], train_X.shape[2]), activation="softsign", recurrent_activation="elu"))
-    model.add(Dense(12))
-    model.add(Dense(3))
-    model.add(Dense(8))
+    # model.add(Dense(12))
+    # model.add(Dense(3))
+    # model.add(Dense(8))
     model.add(Dense(6))
     model.compile(loss='mae', optimizer='adam', metrics=['accuracy'])
     # fit network
@@ -187,12 +186,18 @@ def message():
 
 
 
+
+
+
+
+
+
     # 다음 날의 주행을 예측하기 위해서는 현재로부터 6일 전의 데이터를 넣고 추출시켜야 함
     tst_tim = str(datetime.datetime.now() - datetime.timedelta(days = 6))
     tst_tim = tst_tim[:tst_tim.find(' ')].replace('-', '')
     print(tst_tim)
     predic_data = []
-    predic_data.append(read_csv('H:\\My Drive\\dataset' + '\\fake_data_' + "20221128" +'.csv',  parse_dates = [['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse))
+    predic_data.append(read_csv('H:\\My Drive\\dataset' + '\\fake_data_' + tst_tim +'.csv',  parse_dates = [['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse))
 
 
     predic_data = concat([predic_data[i] for i in range(len(predic_data))], axis=0)
@@ -215,6 +220,8 @@ def message():
     predic_scaled = predic_scaled.reshape(13,6,3)
     predic = np.array(model.predict(predic_scaled))
     print(predic_scaled)
+
+
 
     #주행 스케쥴
     #softmax function 
@@ -242,7 +249,7 @@ def message():
     tomorrow_time = str(datetime.datetime.now() + datetime.timedelta(days = 1))
     tomorrow_time = tomorrow_time[:tomorrow_time.find(' ')].replace('-', '')
     tomorrow_data=np.array([])
-    tomorrow_data = np.append(tomorrow_data,read_csv('H:\\My Drive\\dataset' + '\\fake_data_' + "20221128" +'.csv',  parse_dates = [['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse)['metter'].values)
+    tomorrow_data = np.append(tomorrow_data,read_csv('H:\\My Drive\\dataset' + '\\fake_data_' + tomorrow_time +'.csv',  parse_dates = [['year', 'month', 'day', 'hour']], index_col=0, date_parser=parse)['metter'].values)
 
     real_clean_time = np.array([])
     for i in predic:
@@ -256,6 +263,8 @@ def message():
     time = np.concatenate((real_clean_time, clean_time), axis = 1)
     print(time)
     print('Test RMSE: %.3f' % rmse)
+
+
 #=====================================Ai Code====================================
 
 
@@ -368,7 +377,7 @@ def message():
 
 
 
-schedule.every().day.at("04:55").do(message)
+schedule.every().day.at("14:08").do(message)
 
 while True:
     schedule.run_pending()
