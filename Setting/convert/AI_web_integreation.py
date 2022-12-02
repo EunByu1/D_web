@@ -360,7 +360,7 @@ def message():
 
 
 
-schedule.every().day.at("14:08").do(message)
+schedule.every().day.at("14:").do(message)
 
 while True:
     schedule.run_pending()
