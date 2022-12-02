@@ -146,23 +146,6 @@ def message():
 
 
     from sklearn.metrics import mean_squared_error
-    # # make a prediction
-    # yhat = model.predict(test_X)
-    # test_X = test_X.reshape((test_X.shape[0]*test_X.shape[1], test_X.shape[2]))
-    # yhat = yhat.reshape(yhat.shape[0]*yhat.shape[1],1)
-    # print(test_X.shape, yhat.shape)
-
-    # # invert scaling for forecast
-    # inv_yhat = np.concatenate(( test_X[:,:-1],yhat), axis = 1)
-    # print(inv_yhat.shape)
-    # inv_yhat = scaler.inverse_transform(inv_yhat)
-    # inv_yhat = inv_yhat[:,-1]
-    # # invert scaling for actual
-
-    # test_y = test_y.reshape(test_y.shape[0]*test_y.shape[1], 1)
-    # inv_y = np.concatenate((test_X[:,:-1], test_y), axis=1)
-    # inv_y = scaler.inverse_transform(inv_y)
-    # inv_y = inv_y[:,-1]
 
     prediction = model.predict(test_X)
 
